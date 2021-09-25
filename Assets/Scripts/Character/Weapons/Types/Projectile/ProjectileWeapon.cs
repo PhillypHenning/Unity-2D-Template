@@ -71,8 +71,6 @@ public class ProjectileWeapon : Weapon
         HandleProjectile();
         WeaponInAction = true;
         TimeUntilNextUse = Time.time + TimeBetweenUse;
-
-        Debug.Log("Weapon was used");
     }
 
     private void WeaponEmpty()

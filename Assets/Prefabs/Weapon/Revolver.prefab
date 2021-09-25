@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2512197176341249891}
   - component: {fileID: 2512197176341249890}
+  - component: {fileID: 3635591910744195862}
   m_Layer: 0
   m_Name: Revolver
   m_TagString: Untagged
@@ -53,6 +54,20 @@ MonoBehaviour:
   _UsesReload: 1
   _MaxMagazineSize: 10
   _ProjectileSpawnPosition: {fileID: 8542957682146831427}
+--- !u!114 &3635591910744195862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512197176341249901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d839107b37c83f74bae34780e05120b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ObjectPrefab: {fileID: 1269725097348679038, guid: efb5e6bbec567ae49a547dc1b4f54196, type: 3}
+  _PoolSize: 10
 --- !u!1 &2512197177321804404
 GameObject:
   m_ObjectHideFlags: 0
