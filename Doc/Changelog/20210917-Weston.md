@@ -1,0 +1,17 @@
+Changelog:
+- Added miniboss & boss cutscenes
+- Added melee enemy attack animation
+- Slowed the rate at which enemies could attack, they used to be able to hit the player rapidly while in close quarters
+- Changed ability on fast enemies that used to snuff lit torches to snuff the player's lantern instead (with a 2.5s cooldown on the player)
+- Fixed the inconsistent oil drain rate and made the UI lantern oil space more accurate
+- Increased the rate at which oil depletes
+- Decreased the oil cost for lighting torches
+- Added new torch collection system and UI component to show the number of torches lit and the total number of torches
+- Changed ground and ceiling spikes to gold to make them more prominent and fit the corrupted gold theme better
+- Fixed issue with minecart that would allow player to walk in the railroad scene
+- Fixed issue with doors and minecarts that allowed enemies to hit the player while transitioning
+- Reduced the rate of fire of the revolver and increased the delay from reloading to shooting based on the number of expended bullets (longer reload if the player's clip is empty)
+- Removed ability to rapidly swap between weapons and fire
+- Reduced final boss HP from 350 to 250 and shield enemy shield health from 45 to 40
+- Updates font to use the same pixel font within the menu
+- Changes .exe name to "Blood and Gold" and updates icon to cowboy head

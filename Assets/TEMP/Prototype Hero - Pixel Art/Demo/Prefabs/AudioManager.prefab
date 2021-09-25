@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4699199415772779554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4699199415772779552}
+  - component: {fileID: 4699199415772779553}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4699199415772779552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699199415772779554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.12946096, y: 1.155117, z: -0.001312156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4699199415772779553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4699199415772779554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d92c3970d79864d87159fdea17a766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sounds:
+  - m_name: Footstep
+    m_clips:
+    - {fileID: 8300000, guid: 1a631ada4ecd9cf49a88b135aa70c396, type: 3}
+    - {fileID: 8300000, guid: ee00faf8b8432ff40a6e008c84d5ae59, type: 3}
+    - {fileID: 8300000, guid: 9b0833c02b71a294faba6438278d937a, type: 3}
+    volume: 1
+    pitch: 1
+    m_randomVolumeRange: {x: 0.6, y: 1}
+    m_randomPitchRange: {x: 0.6, y: 0.9}
+    m_loop: 0
+  - m_name: RunStop
+    m_clips:
+    - {fileID: 8300000, guid: 1a631ada4ecd9cf49a88b135aa70c396, type: 3}
+    volume: 1
+    pitch: 1
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+    m_loop: 0
+  - m_name: Jump
+    m_clips:
+    - {fileID: 8300000, guid: 5a18f2ef7db9f1943bedda13ff85ee89, type: 3}
+    volume: 1
+    pitch: 1.2
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+    m_loop: 0
+  - m_name: Landing
+    m_clips:
+    - {fileID: 8300000, guid: 5329b99920a6642409627b29d379aff7, type: 3}
+    volume: 1
+    pitch: 1
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+    m_loop: 0
+  - m_name: SwordAttack
+    m_clips:
+    - {fileID: 8300000, guid: 952f4e06b9fc14a4abd72725f0c66eb2, type: 3}
+    volume: 0.8
+    pitch: 1
+    m_randomVolumeRange: {x: 0.7, y: 1}
+    m_randomPitchRange: {x: 0.9, y: 1.1}
+    m_loop: 0
+  - m_name: Hurt
+    m_clips:
+    - {fileID: 8300000, guid: 4acaf282c31675042873963419dc479d, type: 3}
+    volume: 0.8
+    pitch: 1
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 0.9, y: 1.1}
+    m_loop: 0
+  - m_name: Death
+    m_clips:
+    - {fileID: 8300000, guid: 628c4205ac542644b9286a339010668f, type: 3}
+    volume: 0.8
+    pitch: 1
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+    m_loop: 0
+  - m_name: SheathSword
+    m_clips:
+    - {fileID: 8300000, guid: 3e1c4661705bfe74fbfc9d0c9357d51d, type: 3}
+    volume: 0.2
+    pitch: 1
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1.2}
+    m_loop: 0
+  - m_name: Dodge
+    m_clips:
+    - {fileID: 8300000, guid: cc0a09af0c0ff0e45843d8ebcf4bf2e0, type: 3}
+    volume: 1
+    pitch: 1.2
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 0.9, y: 1.1}
+    m_loop: 0
+  - m_name: LedgeGrab
+    m_clips:
+    - {fileID: 8300000, guid: 5329b99920a6642409627b29d379aff7, type: 3}
+    volume: 0.8
+    pitch: 1.4
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 0.9, y: 1.1}
+    m_loop: 0
+  - m_name: WallSlide
+    m_clips:
+    - {fileID: 8300000, guid: c121abe05053b164d98e52f12af5b14c, type: 3}
+    volume: 0.3
+    pitch: 1
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+    m_loop: 1
+  - m_name: DrawSword
+    m_clips:
+    - {fileID: 8300000, guid: 456299c8c9de76e4cb2322a4113fdd81, type: 3}
+    volume: 0.25
+    pitch: 1.05
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+    m_loop: 0
+  - m_name: AirSlamLanding
+    m_clips:
+    - {fileID: 8300000, guid: c2b13e0fd18ea1c4880fbf37b7f10a70, type: 3}
+    volume: 0.35
+    pitch: 1
+    m_randomVolumeRange: {x: 1, y: 1}
+    m_randomPitchRange: {x: 1, y: 1}
+    m_loop: 0
+  - m_name: Parry
+    m_clips:
+    - {fileID: 8300000, guid: 3a115dcb4dde9fb45a72f397319eec92, type: 3}
+    volume: 0.25
+    pitch: 0.9
+    m_randomVolumeRange: {x: 0.95, y: 1.05}
+    m_randomPitchRange: {x: 0.95, y: 1.05}
+    m_loop: 0
