@@ -15,7 +15,6 @@ public class ProjectileWeapon : Weapon
     private float _CurrentAmmo;
     private bool _CanShoot;
 
-
     public bool UsesBullets { get => _UsesBullets; set => _UsesBullets = value; }
     public bool UsesReload { get => _UsesReload; set => _UsesReload = value; }
 
@@ -28,7 +27,6 @@ public class ProjectileWeapon : Weapon
     {
         RefillAmmo();
         WeaponIsUsable = true;
-
     }
 
     protected override void Start()
@@ -84,9 +82,8 @@ public class ProjectileWeapon : Weapon
     }
 
     private void HandleProjectile(){
-        Debug.Log("Projectile Spawned.. ");
-
         _CurrentAmmo-=1;
+        Debug.Log("Projectile Spawned.. ");
     }
 
     override protected void UseReload(){
