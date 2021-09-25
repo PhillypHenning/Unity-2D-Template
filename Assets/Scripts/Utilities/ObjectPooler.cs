@@ -43,4 +43,22 @@ public class ObjectPooler : MonoBehaviour
         newObject.SetActive(false);
         _PooledObjects.Add(newObject);
     } 
+
+    public GameObject GetGameObjectFromPool(){
+        for (int i = 0; i < _PooledObjects.Count; i++)
+        {
+            // Check if the pooledObject is already active, if it isn't;
+            if (!_PooledObjects[i].activeInHierarchy)
+            {
+                return _PooledObjects[i];
+            }
+        
+            if (i == _PooledObjects.Count - 2)
+            {
+                AddGameObjectToPool();
+            }
+        }
+
+        return null;
+    }
 }

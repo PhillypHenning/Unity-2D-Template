@@ -14,6 +14,7 @@ public class ProjectileWeapon : Weapon
 
     private float _CurrentAmmo;
     private bool _CanShoot;
+    private ObjectPooler _ObjectPooler;
 
     public bool UsesBullets { get => _UsesBullets; set => _UsesBullets = value; }
     public bool UsesReload { get => _UsesReload; set => _UsesReload = value; }
@@ -22,6 +23,7 @@ public class ProjectileWeapon : Weapon
     public float CurrentAmmo { get => _CurrentAmmo; set => _CurrentAmmo = value; }
 
     public Transform ProjectileSpawnPosition { get => _ProjectileSpawnPosition; set => _ProjectileSpawnPosition = value; }
+    public ObjectPooler ObjectPooler { get => _ObjectPooler; set => _ObjectPooler = value; }
 
     private void Awake()
     {
@@ -35,6 +37,7 @@ public class ProjectileWeapon : Weapon
         if (UsesBullets)
         {
             // ObjectPooler instantiation
+            ObjectPooler = GetComponent<ObjectPooler>();
         }
     }
 
@@ -81,6 +84,18 @@ public class ProjectileWeapon : Weapon
 
     private void HandleProjectile(){
         _CurrentAmmo-=1;
+
+        GameObject pooledProjectile = ObjectPooler.GetGameObjectFromPool();
+
+        pooledProjectile.transform.position = ProjectileSpawnPosition.position;
+        pooledProjectile.SetActive(true);
+
+        Vector2 newDirection = WeaponOwner.CharacterIsFacingRight ? transform.right : transform.right * - 1;
+
+        
+
+
+
         Debug.Log("Projectile Spawned.. ");
     }
 
