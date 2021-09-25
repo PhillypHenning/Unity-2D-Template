@@ -312,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _MovementSpeed: 100
   _UsesVerticalMovement: 0
-  _MaxSpeed: 100
+  _MaxSpeed: 200
 --- !u!114 &1783257465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1325,6 +1325,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66864928d5cb34340ad009080d620f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _JumpKeyCode: 32
+  _DodgeKeyCode: 304
+  _MovementLeftKeyCode: 97
+  _MovementRightKeyCode: 100
 --- !u!114 &8825737367646396413
 MonoBehaviour:
   m_ObjectHideFlags: 0

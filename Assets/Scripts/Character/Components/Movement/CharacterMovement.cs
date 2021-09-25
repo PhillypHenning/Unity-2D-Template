@@ -7,6 +7,9 @@ public class CharacterMovement : CharacterComponent
     // Private
     private float _HorizontalMovement;
     private float _VerticalMovement;
+    private float _HorizontalForceApplied;
+    private float _MovementCompoundValue = 0.025f;
+
     // Protected
 
     // Serialized
@@ -35,10 +38,10 @@ public class CharacterMovement : CharacterComponent
 
         // Horizontal
         if(!_Character.CharacterMovementLocked && !_UsesVerticalMovement){
-            var calc = _MovementSpeed * _HorizontalMovement;
-            if(calc > _MaxSpeed) calc = _MaxSpeed;
-            else if(calc < -_MaxSpeed) calc = -_MaxSpeed;
-            _Character.CharacterRigidBody2D.AddForce(new Vector2(calc, 0), ForceMode2D.Impulse); // <-- Immediate force applied        
+            _HorizontalForceApplied = _MovementSpeed * _HorizontalMovement;
+            if(_HorizontalForceApplied > _MaxSpeed) _HorizontalForceApplied = _MaxSpeed;
+            else if(_HorizontalForceApplied < -_MaxSpeed) _HorizontalForceApplied = -_MaxSpeed;
+            _Character.CharacterRigidBody2D.AddForce(new Vector2(_HorizontalForceApplied, 0), ForceMode2D.Impulse); // <-- Immediate force applied            
         }
         // Vertical 
         if(_UsesVerticalMovement && !_Character.CharacterMovementLocked){
@@ -58,8 +61,9 @@ public class CharacterMovement : CharacterComponent
     protected override bool HandlePlayerInput(){
         if(!base.HandlePlayerInput()) return false;
 
-        _HorizontalMovement = Input.GetAxisRaw("Horizontal");
-        if(_UsesVerticalMovement) _VerticalMovement = Input.GetAxisRaw("Vertical");
+        //_HorizontalMovement = Input.GetAxis("Horizontal");
+        CalcPlayerHorizontalInputs();
+        CalcPlayerVerticalInputs();
 
         if(!_Character.CharacterMovementLocked){
             _Character.CharacterIsMoving = _HorizontalMovement != 0;
@@ -69,6 +73,8 @@ public class CharacterMovement : CharacterComponent
                     FlipCharacter();
                 }
             }
+
+            
         }
         return true;
     }
@@ -119,5 +125,27 @@ public class CharacterMovement : CharacterComponent
     private void DetectIfGrounded(){
         if(_Character.GroundSensor.SensorActivated) _Character.CharacterIsGrounded = true;
         else _Character.CharacterIsGrounded = false;
+    }
+
+    private void CalcPlayerHorizontalInputs(){
+        // It's suggested online that KeyCodes are used over Input.RawAxis
+        // This allows us to retain control over the Keybindings in the CharacterInput class.
+        if(Input.GetKey(CharacterInputs.MovementLeftKeyCode)){
+            if(_HorizontalMovement > -.9f){
+                _HorizontalMovement += -_MovementCompoundValue;
+            }
+        }else if(Input.GetKey(CharacterInputs.MovementRightKeyCode)){
+            if(_HorizontalMovement < .9f){ // .9 Has a really good feel to it with the current player values. 
+                _HorizontalMovement += _MovementCompoundValue;
+            }
+        } 
+        else{
+            _HorizontalMovement = 0;
+        }
+    }
+
+    private void CalcPlayerVerticalInputs(){
+        if(!_UsesVerticalMovement){return;}
+        // TODO ^^ Based on the above Horizontal.
     }
 }
