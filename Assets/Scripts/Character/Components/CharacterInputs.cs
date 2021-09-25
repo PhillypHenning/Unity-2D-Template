@@ -19,4 +19,10 @@ public class CharacterInputs : MonoBehaviour
     public KeyCode MovementLeftKeyCode {get => _MovementLeftKeyCode; set => _MovementLeftKeyCode = value;}
     [SerializeField] private KeyCode _MovementRightKeyCode = KeyCode.D;
     public KeyCode MovementRightKeyCode {get => _MovementRightKeyCode; set => _MovementRightKeyCode = value;}
+
+    // Use Weapon
+    [SerializeField] private KeyCode _WeaponKeyCode = KeyCode.J;
+    public KeyCode WeaponKeyCode {get => _WeaponKeyCode; set => _WeaponKeyCode = value;}
+    [SerializeField] private KeyCode _WeaponReloadKeyCode = KeyCode.R;
+    public KeyCode WeaponReloadKeyCode {get => _WeaponReloadKeyCode; set => _WeaponReloadKeyCode = value;}
 }

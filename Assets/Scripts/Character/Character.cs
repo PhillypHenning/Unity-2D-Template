@@ -63,6 +63,9 @@ public class Character : MonoBehaviour
     [SerializeField] private CharacterTypes _CharacterType;
     [SerializeField] private GameObject _CharacterSprite;
 
+    [Header("Weapon Settings")]
+    [SerializeField] private Transform _WeaponPosition;
+
 
     // Public 
     public bool CharacterIsAlive { get => _CharacterIsAlive; set => _CharacterIsAlive = value; }
@@ -76,6 +79,7 @@ public class Character : MonoBehaviour
     public CharacterTypes CharacterType { get => _CharacterType; set => _CharacterType = value; }
     public StateOfInteractions CharacterStateOfInteraction { get => _CharacterStateOfInteraction; set => _CharacterStateOfInteraction = value; }
     public Rigidbody2D CharacterRigidBody2D { get => _CharacterRigidBody2D; set => _CharacterRigidBody2D = value; }
+    public Transform WeaponPosition { get => _WeaponPosition; set => _WeaponPosition = value; }
     
     // READ ONLY
     public LayerMask OriginalLayer => _OriginalLayer;

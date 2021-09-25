@@ -43,6 +43,7 @@ public class CharacterMovement : CharacterComponent
             else if(_HorizontalForceApplied < -_MaxSpeed) _HorizontalForceApplied = -_MaxSpeed;
             _Character.CharacterRigidBody2D.AddForce(new Vector2(_HorizontalForceApplied, 0), ForceMode2D.Impulse); // <-- Immediate force applied            
         }
+
         // Vertical 
         if(_UsesVerticalMovement && !_Character.CharacterMovementLocked){
             var calch = _MovementSpeed * _HorizontalMovement;
@@ -73,8 +74,6 @@ public class CharacterMovement : CharacterComponent
                     FlipCharacter();
                 }
             }
-
-            
         }
         return true;
     }
@@ -86,7 +85,7 @@ public class CharacterMovement : CharacterComponent
             _Character.CharacterIsMoving = _HorizontalMovement != 0;
             if(_Character.CharacterIsMoving){
                 if(_Character.CharacterIsFacingRight && _HorizontalMovement < 0 || !_Character.CharacterIsFacingRight && _HorizontalMovement > 0){
-                    FlipCharacter();
+                    //FlipCharacter();
                 }
 
                 // Character is moving.
@@ -101,10 +100,6 @@ public class CharacterMovement : CharacterComponent
         var character = _Character.CharacterSprite.transform;
         _Character.CharacterIsFacingRight = !_Character.CharacterIsFacingRight;
         character.localRotation = Quaternion.Euler(character.rotation.x, _Character.CharacterIsFacingRight ? 0 : -180, character.rotation.z);
-
-        // Weapon Holder stuff may be best in their own script.
-        // var weaponHolderPos = _WeaponHolder.transform.localPosition;
-        // _WeaponHolder.transform.localPosition = new Vector3(weaponHolderPos.x * -1, weaponHolderPos.y, weaponHolderPos.z);
     }
 
     private void SetLayerCollisionIgnores(){
@@ -130,7 +125,10 @@ public class CharacterMovement : CharacterComponent
     private void CalcPlayerHorizontalInputs(){
         // It's suggested online that KeyCodes are used over Input.RawAxis
         // This allows us to retain control over the Keybindings in the CharacterInput class.
-        if(Input.GetKey(CharacterInputs.MovementLeftKeyCode)){
+        if(Input.GetKey(CharacterInputs.MovementLeftKeyCode) && Input.GetKey(CharacterInputs.MovementRightKeyCode)){
+            _HorizontalMovement = 0;
+        }
+        else if(Input.GetKey(CharacterInputs.MovementLeftKeyCode)){
             if(_HorizontalMovement > -.9f){
                 _HorizontalMovement += -_MovementCompoundValue;
             }

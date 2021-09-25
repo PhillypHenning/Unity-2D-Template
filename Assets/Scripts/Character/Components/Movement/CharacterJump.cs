@@ -82,6 +82,7 @@ public class CharacterJump : CharacterComponent
 
     private void DecideIfCharacterLanded(){
         if(_Character.GroundSensor.SensorActivated && _Character.CharacterRigidBody2D.velocity.y < 0f) CharacterIsJumping = false;
+        // TODO: Lots of things can be done here, but one that I think I may be interested in looking into is fall damage
     }
 
     private void CalculateComponentData(){ // TODO: MAYBE MOVE THIS TO THE COMPONENT CLASS
