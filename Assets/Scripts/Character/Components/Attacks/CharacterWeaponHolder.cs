@@ -5,11 +5,18 @@ using UnityEngine;
 public class CharacterWeaponHolder : CharacterComponent
 {
     [SerializeField] private Weapon _StartingWeapon;
+    [SerializeField] protected WeaponAimTypes _WeaponAimType;
 
     private Weapon _CurrentWeapon;
     private Weapon[] _WeaponsHeld;
 
+    public WeaponAimTypes WeaponAimType { get => _WeaponAimType; set => _WeaponAimType = value; }
     public Weapon CurrentWeapon { get => _CurrentWeapon; set => _CurrentWeapon = value; }
+
+    public enum WeaponAimTypes{
+        Directional,
+        MouseAim
+    }
 
     protected override void Start()
     {
@@ -37,6 +44,8 @@ public class CharacterWeaponHolder : CharacterComponent
     protected override bool HandlePlayerInput()
     {
         if(! base.HandlePlayerInput()) return false;
+        
+        
         
         if(DecideIfPlayerUseWeaponInput()) CurrentWeapon.InitiateUseWeapon();
         if(DecideIfPlayerUseReloadInput()) CurrentWeapon.InitiateReload();
