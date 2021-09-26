@@ -99,8 +99,6 @@ public class CharacterJump : CharacterComponent
         {
             // TODO: Lots of things can be done here, but one that I think I may be interested in looking into is fall damage
             CharacterIsJumping = false;
-            
-            
         }
     }
 
