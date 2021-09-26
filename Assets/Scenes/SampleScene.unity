@@ -695,6 +695,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7479213958244938618, guid: c6b6db9db79a14545b8fcc92d34380ad, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479213958244938618, guid: c6b6db9db79a14545b8fcc92d34380ad, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8003735369643738648, guid: c6b6db9db79a14545b8fcc92d34380ad, type: 3}
       propertyPath: m_RootOrder
       value: 1

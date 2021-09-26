@@ -41,7 +41,7 @@ public class CharacterMovement : CharacterComponent
             _HorizontalForceApplied = _MovementSpeed * _HorizontalMovement;
             if(_HorizontalForceApplied > _MaxSpeed) _HorizontalForceApplied = _MaxSpeed;
             else if(_HorizontalForceApplied < -_MaxSpeed) _HorizontalForceApplied = -_MaxSpeed;
-            _Character.CharacterRigidBody2D.AddForce(new Vector2(_HorizontalForceApplied, 0), ForceMode2D.Impulse); // <-- Immediate force applied            
+            _Character.CharacterRigidBody2D.AddForce(new Vector2(_HorizontalForceApplied, 0), ForceMode2D.Impulse); // <-- Immediate force applied
         }
 
         // Vertical 

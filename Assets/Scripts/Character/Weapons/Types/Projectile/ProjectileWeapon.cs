@@ -92,9 +92,8 @@ public class ProjectileWeapon : Weapon
 
         Vector2 newDirection = WeaponOwner.CharacterIsFacingRight ? transform.right : transform.right * - 1;
 
-        
-
-
+        Projectile projectile = pooledProjectile.GetComponent<Projectile>();
+        projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.CharacterIsFacingRight);
 
         Debug.Log("Projectile Spawned.. ");
     }

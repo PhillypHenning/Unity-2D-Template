@@ -9,6 +9,7 @@ public class CharacterJump : CharacterComponent
     private float _TimeSinceLastJump = 0f;
     private float _LowJumpModifier = 2.5f;
     private float _JumpStartPos;
+    // private CharacterMovement _CharacterMovement;
 
     // Serialized
     [SerializeField] private float _FallMultiplier = 2.5f;
@@ -27,6 +28,7 @@ public class CharacterJump : CharacterComponent
     protected override void Start()
     {
         base.Start();
+        // _CharacterMovement = GetComponent<CharacterMovement>();
     }
 
     protected override void HandleBasicComponentFunction()
@@ -97,6 +99,8 @@ public class CharacterJump : CharacterComponent
         {
             // TODO: Lots of things can be done here, but one that I think I may be interested in looking into is fall damage
             CharacterIsJumping = false;
+            
+            
         }
     }
 
