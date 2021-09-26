@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileWeapon : Weapon
+public class BulletWeapon : Weapon
 {
     [SerializeField] private bool _UsesBullets = true;
     [SerializeField] private bool _UsesReload = true;
@@ -79,7 +79,6 @@ public class ProjectileWeapon : Weapon
     private void WeaponEmpty()
     {
         // Weapon is Empty
-        Debug.Log("Weapon is empty..");
     }
 
     private void HandleProjectile(){
@@ -94,13 +93,10 @@ public class ProjectileWeapon : Weapon
 
         Projectile projectile = pooledProjectile.GetComponent<Projectile>();
         projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.CharacterIsFacingRight);
-
-        Debug.Log("Projectile Spawned.. ");
     }
 
     override protected void UseReload(){
         _CurrentAmmo = _MaxMagazineSize;
-        Debug.Log("Reloading..");
     }
 
     override public void InitiateReload(){
