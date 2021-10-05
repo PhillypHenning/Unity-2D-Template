@@ -650,6 +650,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Green
       objectReference: {fileID: 0}
+    - target: {fileID: 8942010016208301259, guid: c6b6db9db79a14545b8fcc92d34380ad, type: 3}
+      propertyPath: _DragToBeApplied
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942010016208301261, guid: c6b6db9db79a14545b8fcc92d34380ad, type: 3}
+      propertyPath: _StartingWeapon
+      value: 
+      objectReference: {fileID: 3441919856255554806, guid: 44f3dabef8da75f4ca682756b6049f16, type: 3}
     - target: {fileID: 8942010016208301271, guid: c6b6db9db79a14545b8fcc92d34380ad, type: 3}
       propertyPath: m_RootOrder
       value: 1

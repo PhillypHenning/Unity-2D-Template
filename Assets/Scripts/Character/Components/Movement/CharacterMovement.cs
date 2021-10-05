@@ -8,7 +8,7 @@ public class CharacterMovement : CharacterComponent
     private float _HorizontalMovement;
     private float _VerticalMovement;
     private float _HorizontalForceApplied;
-    private float _MovementCompoundValue = 0.025f;
+    private float _MovementCompoundValue = 0.015f;
 
     // Protected
 
@@ -16,14 +16,17 @@ public class CharacterMovement : CharacterComponent
     [SerializeField] private float _MovementSpeed;
     [SerializeField] private bool _UsesVerticalMovement = false;
     [SerializeField] private float _MaxSpeed = 100f;
+    [SerializeField] private float _DragToBeApplied = 3f;
 
     // Public
     public float HorizontalMovement { get => _HorizontalMovement; set => _HorizontalMovement = value; }
     public float VerticalMovement { get => _VerticalMovement; set => _VerticalMovement = value; }
+    public float DragToBeApplied { get => _DragToBeApplied; set => _DragToBeApplied = value; }
 
     protected override void Start(){
         base.Start();
         SetLayerCollisionIgnores();
+        _Character.CharacterRigidBody2D.drag = DragToBeApplied;
     }
 
     protected override void Update()
@@ -139,6 +142,7 @@ public class CharacterMovement : CharacterComponent
         } 
         else{
             _HorizontalMovement = 0;
+            // _Character.CharacterRigidBody2D.velocity = new Vector2(0,0);
         }
     }
 
