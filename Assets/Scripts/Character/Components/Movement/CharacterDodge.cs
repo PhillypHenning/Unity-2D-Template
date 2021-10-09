@@ -78,6 +78,7 @@ public class CharacterDodge : CharacterComponent
 
     private void CalculateDodgeReset(){
         if(_Character.CharacterIsGrounded) _CharacterCanDodgeAgain = true;
+        if(_Character.SlidingSensorL1.SensorActivated || _Character.SlidingSensorR1.SensorActivated) _CharacterCanDodgeAgain = true;
         // HEY! LISTEN:
         // MuLtIpLe JuMp FlAgS cAn Be SeT hErE
     }
