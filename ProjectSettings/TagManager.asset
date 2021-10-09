@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Sensor
+  - Walls
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Player
   - Platform
   - Sensor
-  - 
+  - Walls
   - 
   - 
   - 

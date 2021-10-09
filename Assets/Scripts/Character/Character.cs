@@ -25,6 +25,17 @@ public class Character : MonoBehaviour
     [SerializeField] private Sensor _GroundSensor;
     public Sensor GroundSensor {get => _GroundSensor; set => _GroundSensor = value; }
 
+    [Header("Wall Slide")]
+    [SerializeField] private Sensor _SlidingSensorL1;
+    [SerializeField] private Sensor _SlidingSensorR1;
+    private bool _CharacterIsSliding = false;
+    private bool _CharacterCanWallSlideJump = false;
+    public Sensor SlidingSensorL1 {get => _SlidingSensorL1; set => _SlidingSensorL1 = value; }
+    public Sensor SlidingSensorR1 {get => _SlidingSensorR1; set => _SlidingSensorR1 = value; }
+    public bool CharacterIsSliding {get => _CharacterIsSliding; set => _CharacterIsSliding = value; }
+    public bool CharacterCanWallSlideJump {get => _CharacterCanWallSlideJump; set => _CharacterCanWallSlideJump = value; }
+
+
     [Header("Jump")]
     // TODO: MOVE JUMP
 

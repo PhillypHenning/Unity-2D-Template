@@ -16,6 +16,11 @@ public class CharacterJump : CharacterComponent
     [SerializeField] private float _GravityScaled;
     [SerializeField] private float _VerticalTakeOff = 15f;
     [SerializeField] private float _TimeBetweenJumps;
+    [SerializeField] private float _WallJumpPushOff = 1000f;
+
+    // TESTING
+    [SerializeField] private bool WallJumpType2 = true;
+
 
     // public
     public float FallMultiplier { get => _FallMultiplier; set => _FallMultiplier = value; }
@@ -47,6 +52,7 @@ public class CharacterJump : CharacterComponent
         if (!base.HandlePlayerInput()) return false;
 
         if (DecideIfCharacterCanJump()) Jump();
+        if (DecideIfCharacterCanWallJump()) WallJump();
 
         return true;
     }
@@ -65,7 +71,14 @@ public class CharacterJump : CharacterComponent
         if (_Character.GroundSensor.SensorActivated && JumpInput()) return true;
         return false;
     }
-
+    
+    private bool DecideIfCharacterCanWallJump()
+    {
+        // TODO: JUMP TIMEOUT
+        // TODO: Add lockouts
+        if (_Character.CharacterCanWallSlideJump && JumpInput()) return true;
+        return false;
+    }
     private bool JumpInput()
     {
         if (Input.GetKeyDown(CharacterInputs.JumpKeyCode)) return true;
@@ -76,6 +89,17 @@ public class CharacterJump : CharacterComponent
     {
         _JumpStartPos = transform.position.y;
         _Character.CharacterRigidBody2D.velocity = Vector2.up * VerticalTakeOff;
+        CharacterIsJumping = true;
+    }
+    
+    private void WallJump()
+    {
+        _JumpStartPos = transform.position.y;
+        _Character.CharacterRigidBody2D.velocity = Vector2.up * VerticalTakeOff;
+        
+        float wallJumpVertical = WallJumpType2 ? _WallJumpPushOff : 0;
+        float wallJumpPushOff =  !_Character.CharacterIsFacingRight ? _WallJumpPushOff : -_WallJumpPushOff;
+        _Character.CharacterRigidBody2D.AddForce(new Vector2(wallJumpPushOff, wallJumpVertical), ForceMode2D.Force);
         CharacterIsJumping = true;
     }
 

@@ -53,7 +53,12 @@ public class CharacterDodge : CharacterComponent
         _CharacterMovement.HorizontalMovement = 0;
         
         _StartPos = transform.position;
-        _EndPos = new Vector3(_StartPos.x + (_Character.CharacterIsFacingRight ? _Character.DodgeDistance : -_Character.DodgeDistance), _StartPos.y, 0);
+        // Raycast forward to see if there are any walls or obstancles?
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, _Character.CharacterIsFacingRight ? Vector2.right : Vector2.left, _Character.DodgeDistance, LayerMask.GetMask("Walls"));
+        float dodgeDistance = _Character.CharacterIsFacingRight ? _Character.DodgeDistance : -_Character.DodgeDistance;
+        
+        if(hit.collider != null) _EndPos = new Vector3(hit.point.x, _StartPos.y, 0);
+        else _EndPos = new Vector3(_StartPos.x + dodgeDistance, _StartPos.y, 0);
     }
 
     private void CalculateDodge(){
