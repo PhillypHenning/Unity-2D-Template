@@ -9,6 +9,7 @@ public class StateController : MonoBehaviour
     private GameObject _Target;
     private AIState _TransitionState;
     private Decision _TransitionContext;
+    private AIState _AIPreviousState;
     
     // Serialized
     [SerializeField] private AIState _CurrentState;
@@ -17,6 +18,7 @@ public class StateController : MonoBehaviour
     // Public 
     public Character Character {get => _Character; set => _Character = value;}
     public GameObject Target {get => _Target; set => _Target = value;}
+    public AIState PreviousState {get => _AIPreviousState; set => _AIPreviousState = value;}
     
     // Start is called before the first frame update
     void Start()
@@ -31,12 +33,24 @@ public class StateController : MonoBehaviour
         _CurrentState.EvaluateState(this);
     }
 
-    public void TransitionToState(AIState nextState, Decision decision){
+    public void TransitionToState(AIState nextState, Decision decision = null){
         /*
         TODO: decision is a new addition. This adds priority to the decision.
         */
-        Debug.Log("Transition To State called by: " + nextState.name + " With priority: " + decision._Priority);
-        if(nextState != _RemainState){
+
+        if(decision == null){
+            // Returning to Previous State
+            Debug.Log("Transition To State called by: " + nextState.name);
+            Decision decision_base = new Decision();
+            decision_base._Priority = 1;
+            decision_base._DecisionResult = true;
+
+            _TransitionState = nextState;
+            _TransitionContext = decision_base;
+            
+        }
+        else if(nextState != _RemainState){
+            Debug.Log("Transition To State called by: " + nextState.name + " With priority: " + decision._Priority);
             if(_TransitionContext == null || _TransitionState == null){
                 _TransitionContext = decision;
                 _TransitionState = nextState;
@@ -53,6 +67,7 @@ public class StateController : MonoBehaviour
         // Original code
         if(_CurrentState == _TransitionState || _TransitionState == null) return;
         Debug.Log("Transitioning State from: " + _CurrentState.name + " To State: " + _TransitionState.name);
+        _AIPreviousState = _CurrentState;
         _CurrentState = _TransitionState;
         ResetTransitions();
     }

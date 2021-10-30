@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "AI/State/AI_State")]
-public class AIState : ScriptableObject 
+
+public class AIState2 : ScriptableObject
 {
     public AIAction _AIMicroAction;
     public AIAction[] _AIMacroActions;
     public AITransition[] _AITransitions;
-    [SerializeField] private bool _ReturnToPreviousStateOnFinish = false;
 
     public void EvaluateState(StateController controller){
         if(controller == null){
@@ -21,13 +20,7 @@ public class AIState : ScriptableObject
     }
 
     public void EvaluateTransitions(StateController controller){
-        if(_ReturnToPreviousStateOnFinish){
-            Debug.Log("Returning ...");
-            controller.TransitionToState(controller.PreviousState);
-        }
-        else if((_AITransitions != null || _AITransitions.Length > 1)){
-            
-
+        if(_AITransitions != null || _AITransitions.Length > 1){
             foreach(AITransition transition in _AITransitions){
                 Decision decision = transition._Decision.Decide(controller);
                 
@@ -37,9 +30,9 @@ public class AIState : ScriptableObject
                     controller.TransitionToState(transition._FalseState, decision);
                 }
             }
-            
+
+            controller.EvaluateTransitions();
         }
-        controller.EvaluateTransitions();
     }
 
     public void PerformActions(StateController controller){
@@ -65,4 +58,3 @@ public class AIState : ScriptableObject
         }
     }
 }
-
