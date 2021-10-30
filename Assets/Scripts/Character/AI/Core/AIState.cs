@@ -50,8 +50,8 @@ public class AIState : ScriptableObject
 
     public void PerformMicroActions(StateController controller){
         // If the states micro action is blank, carry over the _RemainAction from the controller
-        if(_AIMicroAction == null){
-
+        if(_AIMicroAction != null){
+            _AIMicroAction.Act(controller);
         }
     }
 

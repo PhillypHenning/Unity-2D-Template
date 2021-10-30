@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7459dbaf843ef38459806a76e9ce62b4, type: 3}
   m_Name: IdleState
   m_EditorClassIdentifier: 
-  _AIMicroAction: {fileID: 0}
+  _AIMicroAction: {fileID: 11400000, guid: c84781867428a854eaa5a59a9edb1ce4, type: 2}
   _AIMacroActions:
   - {fileID: 11400000, guid: 1562a1973a7dc2d4c826dc39754f0ad4, type: 2}
   _AITransitions:

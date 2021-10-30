@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7459dbaf843ef38459806a76e9ce62b4, type: 3}
   m_Name: AI State_Attacking
   m_EditorClassIdentifier: 
-  _AIMicroAction: {fileID: 0}
+  _AIMicroAction: {fileID: 11400000, guid: c84781867428a854eaa5a59a9edb1ce4, type: 2}
   _AIMacroActions:
-  - {fileID: 11400000, guid: c84781867428a854eaa5a59a9edb1ce4, type: 2}
+  - {fileID: 11400000, guid: 76a46ef9167f65547abed06b4b7879f7, type: 2}
+  - {fileID: 11400000, guid: e66b9d2b1946d6a47a3bcae2e713e7b3, type: 2}
   _AITransitions: []
-  _ReturnToPreviousStateOnFinish: 1
+  _ReturnToPreviousStateOnFinish: 0
