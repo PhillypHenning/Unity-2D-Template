@@ -35,8 +35,6 @@ public class StateController : MonoBehaviour
         /*
         TODO: decision is a new addition. This adds priority to the decision.
         */
-
-
         Debug.Log("Transition To State called by: " + nextState.name + " With priority: " + decision._Priority);
         if(nextState != _RemainState){
             if(_TransitionContext == null || _TransitionState == null){
@@ -53,9 +51,15 @@ public class StateController : MonoBehaviour
 
     public void EvaluateTransitions(){
         // Original code
-        if(_CurrentState == _TransitionState) return;
+        if(_CurrentState == _TransitionState || _TransitionState == null) return;
         Debug.Log("Transitioning State from: " + _CurrentState.name + " To State: " + _TransitionState.name);
         _CurrentState = _TransitionState;
+        ResetTransitions();
+    }
+
+    public void ResetTransitions(){
+        _TransitionState = null;
+        _TransitionContext = null;
     }
 
 }

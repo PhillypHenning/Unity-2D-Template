@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307c059a2da348345835157e2c593ad5, type: 3}
   m_Name: Test_Decision_HP
   m_EditorClassIdentifier: 
-  _TestSimpleDecision: 1
-  _Priority: 5
+  _TestSimpleDecision: 0
+  _Priority: 2

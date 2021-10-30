@@ -43,6 +43,7 @@ public class AIState : ScriptableObject {
             //Debug.Log("AI Actions in queue: " + _AIActions);
             foreach(AIAction action in _AIActions){
                 action.Act(controller);
+                //controller.ResetTransitions();
             }
         }
     }
