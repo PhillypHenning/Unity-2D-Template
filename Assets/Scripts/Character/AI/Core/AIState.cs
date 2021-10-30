@@ -57,10 +57,8 @@ public class AIState : ScriptableObject
 
     public void PerformMacroActions(StateController controller){
         if(_AIMacroActions != null || _AIMacroActions.Length > 1){
-            //Debug.Log("AI Actions in queue: " + _AIActions);
             foreach(AIAction action in _AIMacroActions){
                 action.Act(controller);
-                //controller.ResetTransitions();
             }
         }
     }
