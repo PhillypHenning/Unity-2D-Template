@@ -76,7 +76,7 @@ jobs:
           repo_token: ${{ secrets.GH_CREDENTIALS }}
           asset_name: build-${{ matrix.targetPlatform }}.zip
           file: build/build-${{ matrix.targetPlatform }}.zip
-          tag: ${{ github.ref }}-$GITHUB_SHA
+          tag: ${{ github.ref }}-${{ github.sha }}
           body: "Automated deployment from develop branch"
           prerelease: true
           overwrite: false
