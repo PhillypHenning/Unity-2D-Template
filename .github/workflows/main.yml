@@ -149,15 +149,15 @@ jobs:
   #         file: build-StandaloneWindows64.zip
   #         token: ${{ secrets.GH_CREDENTIALS }}
       
-      - name: Upload Windows (64-Bit)
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: windows
-          ITCH_GAME: ${{ env.ITCH_PROJECT_NAME }}
-          ITCH_USER: roasted-goblin-studios
-          PACKAGE: build-StandaloneWindows64.zip
-          VERSION: ${{ steps.download-windows64.outputs.version }}
+      # - name: Upload Windows (64-Bit)
+      #   uses: josephbmanley/butler-publish-itchio-action@master
+      #   env:
+      #     BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+      #     CHANNEL: windows
+      #     ITCH_GAME: ${{ env.ITCH_PROJECT_NAME }}
+      #     ITCH_USER: roasted-goblin-studios
+      #     PACKAGE: build-StandaloneWindows64.zip
+      #     VERSION: ${{ steps.download-windows64.outputs.version }}
 
   release_macos_to_itch:
     name: Release MacOS to itch.io
