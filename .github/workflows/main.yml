@@ -105,7 +105,7 @@ jobs:
       - name: Upload WebGL
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
-          BUTLER_CREDENTIALS:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: html
           ITCH_GAME: ${{ env.ITCH_PROJECT_NAME }}
           ITCH_USER: awildphil
