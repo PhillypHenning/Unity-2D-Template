@@ -99,7 +99,6 @@ public class CharacterAnimation : MonoBehaviour
 
     private bool StaticAnimationPlaying()
     {
-        Debug.Log("StaticAnimation time: " + _StaticAnimationTime);
         return _StaticAnimationTime > 0;
     }
 
