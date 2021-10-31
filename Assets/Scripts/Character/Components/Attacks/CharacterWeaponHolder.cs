@@ -61,12 +61,12 @@ public class CharacterWeaponHolder : CharacterComponent
     }
 
     private void EvaluateWeaponFlip(){
-        if(!_Character.CharacterIsFacingRight) { 
+        if(!_Character.IsFacingRight) { 
             if(_Character.WeaponPosition.transform.localPosition.x < 0) return;
             _Character.WeaponPosition.transform.localPosition = new Vector3(_Character.WeaponPosition.transform.localPosition.x * -1, _Character.WeaponPosition.transform.localPosition.y, _Character.WeaponPosition.transform.localPosition .z);
             _CurrentWeapon.FlipWeapon();
         }
-        else if(_Character.CharacterIsFacingRight) {
+        else if(_Character.IsFacingRight) {
             if(_Character.WeaponPosition.transform.localPosition.x > 0) return;
             _Character.WeaponPosition.transform.localPosition = new Vector3(_Character.WeaponPosition.transform.localPosition.x * -1, _Character.WeaponPosition.transform.localPosition.y, _Character.WeaponPosition.transform.localPosition .z);
             _CurrentWeapon.FlipWeapon();

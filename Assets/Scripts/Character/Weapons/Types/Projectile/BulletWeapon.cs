@@ -89,10 +89,10 @@ public class BulletWeapon : Weapon
         pooledProjectile.transform.position = ProjectileSpawnPosition.position;
         pooledProjectile.SetActive(true);
 
-        Vector2 newDirection = WeaponOwner.CharacterIsFacingRight ? transform.right : transform.right * - 1;
+        Vector2 newDirection = WeaponOwner.IsFacingRight ? transform.right : transform.right * - 1;
 
         Projectile projectile = pooledProjectile.GetComponent<Projectile>();
-        projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.CharacterIsFacingRight);
+        projectile.SetDirection(newDirection, transform.rotation, WeaponOwner.IsFacingRight);
     }
 
     override protected void UseReload(){

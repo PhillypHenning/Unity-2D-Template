@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7459dbaf843ef38459806a76e9ce62b4, type: 3}
+  m_Name: IdleState
+  m_EditorClassIdentifier: 
+  _AIMicroAction: {fileID: 11400000, guid: c84781867428a854eaa5a59a9edb1ce4, type: 2}
+  _AIMacroActions:
+  - {fileID: 11400000, guid: 1562a1973a7dc2d4c826dc39754f0ad4, type: 2}
+  _AITransitions:
+  - _Decision: {fileID: 11400000, guid: e05a7b180543bae448a3dab939954397, type: 2}
+    _TrueState: {fileID: 11400000, guid: 54f9b8529fa347c4ca12c2f1ff90eac3, type: 2}
+    _FalseState: {fileID: 11400000, guid: 85fe093125fea4f49925e163ec352019, type: 2}
+  - _Decision: {fileID: 11400000, guid: d687fad2e5f0c384e8bfc4f759230e15, type: 2}
+    _TrueState: {fileID: 11400000, guid: 57ec5aaabe836d34aa67a8ba1bf53cc5, type: 2}
+    _FalseState: {fileID: 11400000, guid: 85fe093125fea4f49925e163ec352019, type: 2}
+  _ReturnToPreviousStateOnFinish: 0
