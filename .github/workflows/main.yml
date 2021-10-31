@@ -93,7 +93,7 @@ jobs:
         id: download-webgl
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          version: "latest"
+          version: ${{ github.ref }}-${{ github.sha }}
           file: build-WebGL.zip
           token: ${{ secrets.GH_CREDENTIALS }}
       
@@ -116,7 +116,7 @@ jobs:
         id: download-windows32
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          version: "latest"
+          version: ${{ github.ref }}-${{ github.sha }}
           file: build-StandaloneWindows.zip
           token: ${{ secrets.GH_CREDENTIALS }}
       
@@ -139,7 +139,7 @@ jobs:
   #       id: download-windows64
   #       uses: dsaltares/fetch-gh-release-asset@master
   #       with:
-  #         version: "latest"
+  #         version: ${{ github.ref }}-${{ github.sha }}
   #         file: build-StandaloneWindows64.zip
   #         token: ${{ secrets.GH_CREDENTIALS }}
       
@@ -162,7 +162,7 @@ jobs:
         id: download-macos
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          version: "latest"
+          version: ${{ github.ref }}-${{ github.sha }}
           file: build-StandaloneOSX.zip
           token: ${{ secrets.GH_CREDENTIALS }}
       
@@ -185,7 +185,7 @@ jobs:
         id: download-linux
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          version: "latest"
+          version: ${{ github.ref }}-${{ github.sha }}
           file: build-StandaloneLinux64.zip
           token: ${{ secrets.GH_CREDENTIALS }}
       
