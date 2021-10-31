@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Test_Decision_Detect_Target
   m_EditorClassIdentifier: 
   _TestSimpleDecision: 1
-  _Priority: 1
+  _Priority: 5

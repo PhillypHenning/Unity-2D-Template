@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "AI/State/AI_State")]
+
+[CreateAssetMenu(menuName = "AI/States/AI_State")]
 public class AIState : ScriptableObject 
 {
     public AIAction _AIMicroAction;
