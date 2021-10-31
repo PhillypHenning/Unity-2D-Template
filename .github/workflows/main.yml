@@ -4,16 +4,13 @@ on:
   push:
     branches:
       - develop
-      - master
 
   pull_request:
     branches:
       - develop
 
-
 env:
   ITCH_PROJECT_NAME: lil-ronin-testing
-
 
 jobs:
 #-----------------------------------------------------------------------------
@@ -60,7 +57,6 @@ jobs:
 #-----------------------------------------------------------------------------
 # ARCHIVE
 #-----------------------------------------------------------------------------
-
       - uses: actions/upload-artifact@v2
         name: Archive Artifacts
         with:
@@ -81,15 +77,13 @@ jobs:
           asset_name: build-${{ matrix.targetPlatform }}.zip
           file: build/build-${{ matrix.targetPlatform }}.zip
           tag: ${{ github.ref }}-$GITHUB_SHA
-          body: "Automated deployment from development branch"
+          body: "Automated deployment from develop branch"
           prerelease: true
           overwrite: false
-
 
 #-----------------------------------------------------------------------------
 # DEPLOY
 #-----------------------------------------------------------------------------
-
   release_webgl_to_itch:
     name: Release WebGL to itch.io
     runs-on: ubuntu-latest
