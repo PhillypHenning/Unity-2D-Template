@@ -97,7 +97,7 @@ jobs:
           repo_token: ${{ secrets.GH_CREDENTIALS }}
           asset_name: build-${{ matrix.targetPlatform }}.zip
           file: build/build-${{ matrix.targetPlatform }}.zip
-          tag: ${{ github.ref }}-${{ github.sha }}
+          tag: ${{ env.GITHUB_REF_SLUG }}-${{ env.GITHUB_SHA_SHORT }}
           body: "Automated deployment from develop branch"
           prerelease: true
           overwrite: false
@@ -114,7 +114,7 @@ jobs:
         id: download-webgl
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          version: ${{ github.ref }}-${{ github.sha }}
+          version: ${{ env.GITHUB_REF_SLUG }}-${{ env.GITHUB_SHA_SHORT }}
           file: build-WebGL.zip
           token: ${{ secrets.GH_CREDENTIALS }}
       
@@ -126,7 +126,7 @@ jobs:
           ITCH_GAME: ${{ env.ITCH_PROJECT_NAME }}
           ITCH_USER: roasted-goblin-studios
           PACKAGE: build-WebGL.zip
-          VERSION: ${{ github.ref }}-${{ github.sha }}
+          VERSION: ${{ env.GITHUB_REF_SLUG }}-${{ env.GITHUB_SHA_SHORT }}
 
   release_windows32_to_itch:
     name: Release Windows (32-Bit) to itch.io
@@ -137,7 +137,7 @@ jobs:
         id: download-windows32
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          version: ${{ github.ref }}-${{ github.sha }}
+          version: ${{ env.GITHUB_REF_SLUG }}-${{ env.GITHUB_SHA_SHORT }}
           file: build-StandaloneWindows.zip
           token: ${{ secrets.GH_CREDENTIALS }}
       
@@ -149,7 +149,7 @@ jobs:
           ITCH_GAME: ${{ env.ITCH_PROJECT_NAME }}
           ITCH_USER: roasted-goblin-studios
           PACKAGE: build-StandaloneWindows.zip
-          VERSION: ${{ github.ref }}-${{ github.sha }}
+          VERSION: ${{ env.GITHUB_REF_SLUG }}-${{ env.GITHUB_SHA_SHORT }}
   
   # release_windows64_to_itch:
   #   name: Release Windows (64-Bit) to itch.io
@@ -160,7 +160,7 @@ jobs:
   #       id: download-windows64
   #       uses: dsaltares/fetch-gh-release-asset@master
   #       with:
-  #         version: ${{ github.ref }}-${{ github.sha }}
+  #         version: ${{ env.GITHUB_REF_SLUG }}-${{ env.GITHUB_SHA_SHORT }}
   #         file: build-StandaloneWindows64.zip
   #         token: ${{ secrets.GH_CREDENTIALS }}
       
@@ -183,7 +183,7 @@ jobs:
         id: download-macos
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          version: ${{ github.ref }}-${{ github.sha }}
+          version: ${{ env.GITHUB_REF_SLUG }}-${{ env.GITHUB_SHA_SHORT }}
           file: build-StandaloneOSX.zip
           token: ${{ secrets.GH_CREDENTIALS }}
       
@@ -195,7 +195,7 @@ jobs:
           ITCH_GAME: ${{ env.ITCH_PROJECT_NAME }}
           ITCH_USER: roasted-goblin-studios
           PACKAGE: build-StandaloneOSX.zip
-          VERSION: ${{ github.ref }}-${{ github.sha }}
+          VERSION: ${{ env.GITHUB_REF_SLUG }}-${{ env.GITHUB_SHA_SHORT }}
 
   release_linux_to_itch:
     name: Release Linux to itch.io
@@ -206,7 +206,7 @@ jobs:
         id: download-linux
         uses: dsaltares/fetch-gh-release-asset@master
         with:
-          version: ${{ github.ref }}-${{ github.sha }}
+          version: ${{ env.GITHUB_REF_SLUG }}-${{ env.GITHUB_SHA_SHORT }}
           file: build-StandaloneLinux64.zip
           token: ${{ secrets.GH_CREDENTIALS }}
       
@@ -218,5 +218,5 @@ jobs:
           ITCH_GAME: ${{ env.ITCH_PROJECT_NAME }}
           ITCH_USER: roasted-goblin-studios
           PACKAGE: build-StandaloneLinux64.zip
-          VERSION: ${{ github.ref }}-${{ github.sha }}
+          VERSION: ${{ env.GITHUB_REF_SLUG }}-${{ github.sha }}
     
