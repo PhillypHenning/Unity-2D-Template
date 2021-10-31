@@ -46,7 +46,7 @@ public class CharacterDodge : CharacterComponent
     }
 
     private void Dodge(){
-        //_Animation.ChangeAnimationState("Dodge", CharacterAnimation.AnimationType.Static);
+        _Animation.ChangeAnimationState("Dash", CharacterAnimation.AnimationType.Static);
         _Character.IsDodging = true;
         _Character.CanDodge = false;
         _Character.DirectionalLocked = true;

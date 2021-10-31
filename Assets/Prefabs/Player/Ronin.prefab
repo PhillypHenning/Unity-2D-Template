@@ -12,6 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c6efd936ce70041a0673561441e20a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1231627182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921135760340436281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a837cc0e9aa87fc478c5ccd35c829c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dash: {fileID: 0}
 --- !u!1001 &1544431737242401103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95,6 +108,10 @@ PrefabInstance:
       propertyPath: _Sprite
       value: 
       objectReference: {fileID: 6921135760697941592}
+    - target: {fileID: 8458389255254998141, guid: c6b6db9db79a14545b8fcc92d34380ad, type: 3}
+      propertyPath: _FallMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8458389255525015515, guid: c6b6db9db79a14545b8fcc92d34380ad, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.67
@@ -103,7 +120,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8458389255139059481, guid: c6b6db9db79a14545b8fcc92d34380ad, type: 3}
+    - {fileID: 8458389255139059478, guid: c6b6db9db79a14545b8fcc92d34380ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c6b6db9db79a14545b8fcc92d34380ad, type: 3}
 --- !u!1 &6921135760340436281 stripped
 GameObject:
