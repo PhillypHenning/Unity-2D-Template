@@ -26,7 +26,7 @@ public class CharacterMovement : CharacterComponent
     protected override void Start(){
         base.Start();
         SetLayerCollisionIgnores();
-        _Character.CharacterRigidBody2D.drag = DragToBeApplied;
+        _Character.RigidBody2D.drag = DragToBeApplied;
     }
 
     protected override void Update()
@@ -40,15 +40,15 @@ public class CharacterMovement : CharacterComponent
         if(_Character.DirectionalLocked) return;
 
         // Horizontal
-        if(!_Character.CharacterMovementLocked && !_UsesVerticalMovement){
+        if(!_Character.MovementLocked && !_UsesVerticalMovement){
             _HorizontalForceApplied = _MovementSpeed * _HorizontalMovement;
             if(_HorizontalForceApplied > _MaxSpeed) _HorizontalForceApplied = _MaxSpeed;
             else if(_HorizontalForceApplied < -_MaxSpeed) _HorizontalForceApplied = -_MaxSpeed;
-            _Character.CharacterRigidBody2D.AddForce(new Vector2(_HorizontalForceApplied, 0), ForceMode2D.Impulse); // <-- Immediate force applied
+            _Character.RigidBody2D.AddForce(new Vector2(_HorizontalForceApplied, 0), ForceMode2D.Impulse); // <-- Immediate force applied
         }
 
         // Vertical 
-        if(_UsesVerticalMovement && !_Character.CharacterMovementLocked){
+        if(_UsesVerticalMovement && !_Character.MovementLocked){
             var calch = _MovementSpeed * _HorizontalMovement;
             var calcv = _MovementSpeed * _VerticalMovement;
 
@@ -58,7 +58,7 @@ public class CharacterMovement : CharacterComponent
             if(calcv > _MaxSpeed) calcv = _MaxSpeed;
             else if(calcv < -_MaxSpeed) calcv = -_MaxSpeed;
 
-            _Character.CharacterRigidBody2D.AddForce(new Vector2(calch, calcv), ForceMode2D.Force);        
+            _Character.RigidBody2D.AddForce(new Vector2(calch, calcv), ForceMode2D.Force);        
         }
     }
 
@@ -69,11 +69,11 @@ public class CharacterMovement : CharacterComponent
         CalcPlayerHorizontalInputs();
         CalcPlayerVerticalInputs();
 
-        if(!_Character.CharacterMovementLocked){
-            _Character.CharacterIsMoving = _HorizontalMovement != 0;
+        if(!_Character.MovementLocked){
+            _Character.IsMoving = _HorizontalMovement != 0;
             
-            if(_Character.CharacterIsMoving){
-                if(_Character.CharacterIsFacingRight && _HorizontalMovement < 0 || !_Character.CharacterIsFacingRight && _HorizontalMovement > 0){
+            if(_Character.IsMoving){
+                if(_Character.IsFacingRight && _HorizontalMovement < 0 || !_Character.IsFacingRight && _HorizontalMovement > 0){
                     FlipCharacter();
                 }
             }
@@ -84,10 +84,10 @@ public class CharacterMovement : CharacterComponent
     protected override bool HandleAIInput(){
         if(!base.HandleAIInput()) return false;
         // Movement values are handled through the public SetFunctions
-        if(!_Character.CharacterMovementLocked){
-            _Character.CharacterIsMoving = _HorizontalMovement != 0;
-            if(_Character.CharacterIsMoving){
-                if(_Character.CharacterIsFacingRight && _HorizontalMovement < 0 || !_Character.CharacterIsFacingRight && _HorizontalMovement > 0){
+        if(!_Character.MovementLocked){
+            _Character.IsMoving = _HorizontalMovement != 0;
+            if(_Character.IsMoving){
+                if(_Character.IsFacingRight && _HorizontalMovement < 0 || !_Character.IsFacingRight && _HorizontalMovement > 0){
                     //FlipCharacter();
                 }
 
@@ -100,9 +100,9 @@ public class CharacterMovement : CharacterComponent
     }
 
     private void FlipCharacter(){
-        var character = _Character.CharacterSprite.transform;
-        _Character.CharacterIsFacingRight = !_Character.CharacterIsFacingRight;
-        character.localRotation = Quaternion.Euler(character.rotation.x, _Character.CharacterIsFacingRight ? 0 : -180, character.rotation.z);
+        var character = _Character.Sprite.transform;
+        _Character.IsFacingRight = !_Character.IsFacingRight;
+        character.localRotation = Quaternion.Euler(character.rotation.x, _Character.IsFacingRight ? 0 : -180, character.rotation.z);
     }
 
     private void SetLayerCollisionIgnores(){
@@ -117,12 +117,12 @@ public class CharacterMovement : CharacterComponent
     }
 
     public void MovePosition(Vector2 newPos){
-        _Character.CharacterRigidBody2D.MovePosition(newPos);
+        _Character.RigidBody2D.MovePosition(newPos);
     }
 
     private void DetectIfGrounded(){
-        if(_Character.GroundSensor.SensorActivated) _Character.CharacterIsGrounded = true;
-        else _Character.CharacterIsGrounded = false;
+        if(_Character.GroundSensor.SensorActivated) _Character.IsGrounded = true;
+        else _Character.IsGrounded = false;
     }
 
     private void CalcPlayerHorizontalInputs(){

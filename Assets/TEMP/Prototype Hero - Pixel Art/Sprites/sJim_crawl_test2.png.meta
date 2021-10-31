@@ -1,0 +1,528 @@
+fileFormatVersion: 2
+guid: f534ab342e024e24495dfdb942ccbf53
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2447401845339694813
+    second: sJim_crawl_test2_0
+  - first:
+      213: -5976843359900654824
+    second: sJim_crawl_test2_1
+  - first:
+      213: -1911774665540973836
+    second: sJim_crawl_test2_2
+  - first:
+      213: 6331556380249671601
+    second: sJim_crawl_test2_3
+  - first:
+      213: 848611715450892447
+    second: sJim_crawl_test2_4
+  - first:
+      213: -7610405753123873635
+    second: sJim_crawl_test2_5
+  - first:
+      213: -429212957814888955
+    second: sJim_crawl_test2_6
+  - first:
+      213: -6610251257471624216
+    second: sJim_crawl_test2_7
+  - first:
+      213: 8172964722806982298
+    second: sJim_crawl_test2_8
+  - first:
+      213: -8676579732667426232
+    second: sJim_crawl_test2_9
+  - first:
+      213: 5330448471980909053
+    second: sJim_crawl_test2_10
+  - first:
+      213: -2922614025246689255
+    second: sJim_crawl_test2_11
+  - first:
+      213: 8208355080660703276
+    second: sJim_crawl_test2_12
+  - first:
+      213: 3168102254007791281
+    second: sJim_crawl_test2_13
+  - first:
+      213: -2953869645786232456
+    second: sJim_crawl_test2_14
+  - first:
+      213: 2760412780052132264
+    second: sJim_crawl_test2_15
+  - first:
+      213: 5686648225480727607
+    second: sJim_crawl_test2_16
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 16
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sJim_crawl_test2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1285
+        width: 611
+        height: 255
+      alignment: 9
+      pivot: {x: 0.50384164, y: 0.15022068}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6ab1ee20be6f120800000000000000
+      internalID: 2447401845339694813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_1
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1282
+        width: 514
+        height: 258
+      alignment: 9
+      pivot: {x: 0.49543354, y: 0.12699476}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81328fe71acfd0da0800000000000000
+      internalID: -5976843359900654824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_2
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 1301
+        width: 652
+        height: 239
+      alignment: 9
+      pivot: {x: 0.57200015, y: 0.15626736}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fac6d912130875e0800000000000000
+      internalID: -1911774665540973836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1033
+        width: 546
+        height: 252
+      alignment: 9
+      pivot: {x: 0.49570116, y: 0.136742}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7c3285bf43ed750800000000000000
+      internalID: 6331556380249671601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_4
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1030
+        width: 490
+        height: 252
+      alignment: 9
+      pivot: {x: 0.4281468, y: 0.136742}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f907fabebdfd6cb00800000000000000
+      internalID: 848611715450892447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_5
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 1056
+        width: 641
+        height: 245
+      alignment: 9
+      pivot: {x: 0.56591225, y: 0.14552425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c56780a48626690800000000000000
+      internalID: -7610405753123873635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 767
+        width: 556
+        height: 266
+      alignment: 9
+      pivot: {x: 0.5042216, y: 0.16468525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506e274c6112b0af0800000000000000
+      internalID: -429212957814888955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_7
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 777
+        width: 501
+        height: 253
+      alignment: 9
+      pivot: {x: 0.4578347, y: 0.1474554}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb1352018ba344a0800000000000000
+      internalID: -6610251257471624216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_8
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 810
+        width: 636
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5738115, y: 0.13742387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9685b8fc143c6170800000000000000
+      internalID: 8172964722806982298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 513
+        width: 610
+        height: 254
+      alignment: 9
+      pivot: {x: 0.56156605, y: 0.15808442}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a110124b8969780800000000000000
+      internalID: -8676579732667426232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_10
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 525
+        width: 489
+        height: 252
+      alignment: 9
+      pivot: {x: 0.51919997, y: 0.19262792}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df122f1b4ae89f940800000000000000
+      internalID: 5330448471980909053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_11
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 332
+        width: 648
+        height: 243
+      alignment: 9
+      pivot: {x: 0.58119935, y: 0.16221048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918b899570ac077d0800000000000000
+      internalID: -2922614025246689255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_12
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 572
+        width: 652
+        height: 238
+      alignment: 9
+      pivot: {x: 0.5936002, y: 0.1449608}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28dd05c47fe9e170800000000000000
+      internalID: 8208355080660703276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 263
+        width: 628
+        height: 250
+      alignment: 9
+      pivot: {x: 0.6121276, y: 0.22772412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1beaf36f63c57fb20800000000000000
+      internalID: 3168102254007791281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_14
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 94
+        width: 652
+        height: 238
+      alignment: 9
+      pivot: {x: 0.6000696, y: 0.13742751}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8794a1a153fb107d0800000000000000
+      internalID: -2953869645786232456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 532
+        height: 263
+      alignment: 9
+      pivot: {x: 0.58824074, y: 0.21440846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a1b4745cc4fe4620800000000000000
+      internalID: 2760412780052132264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sJim_crawl_test2_16
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1
+        width: 588
+        height: 262
+      alignment: 9
+      pivot: {x: 0.5558858, y: 0.18644197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c52629e680bee40800000000000000
+      internalID: 5686648225480727607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

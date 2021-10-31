@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7459dbaf843ef38459806a76e9ce62b4, type: 3}
+  m_Name: AI_State_Chase_Enemy
+  m_EditorClassIdentifier: 
+  _AIMicroAction: {fileID: 0}
+  _AIMacroActions:
+  - {fileID: 11400000, guid: e66b9d2b1946d6a47a3bcae2e713e7b3, type: 2}
+  - {fileID: 11400000, guid: 76a46ef9167f65547abed06b4b7879f7, type: 2}
+  _AITransitions:
+  - _Decision: {fileID: 11400000, guid: 90b76737a7fed424993da6e46b037a54, type: 2}
+    _TrueState: {fileID: 11400000, guid: e7dd46a6a1b7f6d4a8cda4ebd140b526, type: 2}
+    _FalseState: {fileID: 11400000, guid: 85fe093125fea4f49925e163ec352019, type: 2}
+  _ReturnToPreviousStateOnFinish: 0
