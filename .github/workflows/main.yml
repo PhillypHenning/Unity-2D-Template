@@ -49,7 +49,7 @@ jobs:
           name: Build-${{ matrix.targetPlatform }}-develop
           path: build/${{ matrix.targetPlatform }}
       
-      - uses: montudor/actions-zip@v1
+      - uses: montudor/action-zip@v1
         name: "Zip Builds - ${{ matrix.targetPlatform }}"
         if: github.event.action == 'published'
         with:
