@@ -105,7 +105,7 @@ jobs:
           ITCH_GAME: ${{ env.ITCH_PROJECT_NAME }}
           ITCH_USER: roasted-goblin-studios
           PACKAGE: build-WebGL.zip
-          VERSION: ${{ steps.download-webgl.outputs.version }}
+          VERSION: ${{ github.ref }}-${{ github.sha }}
 
   release_windows32_to_itch:
     name: Release Windows (32-Bit) to itch.io
@@ -128,7 +128,7 @@ jobs:
           ITCH_GAME: ${{ env.ITCH_PROJECT_NAME }}
           ITCH_USER: roasted-goblin-studios
           PACKAGE: build-StandaloneWindows.zip
-          VERSION: ${{ steps.download-windows32.outputs.version }}
+          VERSION: ${{ github.ref }}-${{ github.sha }}
   
   # release_windows64_to_itch:
   #   name: Release Windows (64-Bit) to itch.io
@@ -174,7 +174,7 @@ jobs:
           ITCH_GAME: ${{ env.ITCH_PROJECT_NAME }}
           ITCH_USER: roasted-goblin-studios
           PACKAGE: build-StandaloneOSX.zip
-          VERSION: ${{ steps.download-macos.outputs.version }}
+          VERSION: ${{ github.ref }}-${{ github.sha }}
 
   release_linux_to_itch:
     name: Release Linux to itch.io
@@ -197,5 +197,5 @@ jobs:
           ITCH_GAME: ${{ env.ITCH_PROJECT_NAME }}
           ITCH_USER: roasted-goblin-studios
           PACKAGE: build-StandaloneLinux64.zip
-          VERSION: ${{ steps.download-linux.outputs.version }}
+          VERSION: ${{ github.ref }}-${{ github.sha }}
     
