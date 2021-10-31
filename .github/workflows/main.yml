@@ -16,7 +16,7 @@ jobs:
 #-----------------------------------------------------------------------------
 # GIT EXPOSE
 #-----------------------------------------------------------------------------
-  Config
+  Config:
   - name: Inject slug/short variables
     uses: rlespinasse/github-slug-action@v3.x
 
