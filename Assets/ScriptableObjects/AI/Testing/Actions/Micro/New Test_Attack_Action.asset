@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e2685c6696f4c4fa3ded7c1986063f, type: 3}
-  m_Name: Simple_Action_Attacking
+  m_Script: {fileID: 11500000, guid: db2131938a509bf4ea5131725a71005e, type: 3}
+  m_Name: New Test_Attack_Action
   m_EditorClassIdentifier: 
-  _ActionDebugName: Attacking ...
+  _AttackActions: []

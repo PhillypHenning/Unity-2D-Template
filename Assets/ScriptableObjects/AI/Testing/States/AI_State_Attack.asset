@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7459dbaf843ef38459806a76e9ce62b4, type: 3}
-  m_Name: AI State_Attacking
+  m_Name: AI_State_Attack
   m_EditorClassIdentifier: 
-  _AIMicroAction: {fileID: 11400000, guid: c84781867428a854eaa5a59a9edb1ce4, type: 2}
+  _AIMicroAction: {fileID: 11400000, guid: 5e9335cee9c3a08478c714edc56fa5fc, type: 2}
   _AIMacroActions:
-  - {fileID: 11400000, guid: 76a46ef9167f65547abed06b4b7879f7, type: 2}
   - {fileID: 11400000, guid: e66b9d2b1946d6a47a3bcae2e713e7b3, type: 2}
+  - {fileID: 11400000, guid: 76a46ef9167f65547abed06b4b7879f7, type: 2}
   _AITransitions: []
-  _ReturnToPreviousStateOnFinish: 0
+  _ReturnToPreviousStateOnFinish: 1
