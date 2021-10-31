@@ -13,42 +13,43 @@ public class Character : MonoBehaviour
     private float _GameEndTime;
 
     [Header("Lockouts")]
-    private bool _CharacterIsActionable; // Actionable is used to specify abilities.
-    private bool _CharacterMovementLocked; // Movement Locked is to specify movement
+    private bool _IsActionable; // Actionable is used to specify abilities.
+    private bool _MovementLocked; // Movement Locked is to specify movement
     private bool _DirectionalLocked = false;
     public bool DirectionalLocked { get => _DirectionalLocked; set => _DirectionalLocked = value; }
 
     [Header("Movement Settings")]
-    private bool _CharacterIsMoving;
-    private bool _CharacterIsGrounded;
-    private bool _CharacterIsFacingRight = true;
+    private bool _IsMoving;
+    private bool _IsFalling;
+    private bool _IsGrounded;
+    private bool _IsFacingRight = true;
     [SerializeField] private Sensor _GroundSensor;
     public Sensor GroundSensor {get => _GroundSensor; set => _GroundSensor = value; }
 
     [Header("Wall Slide")]
     [SerializeField] private Sensor _SlidingSensorL1;
     [SerializeField] private Sensor _SlidingSensorR1;
-    private bool _CharacterIsSliding = false;
-    private bool _CharacterCanWallSlideJump = false;
+    private bool _IsSliding = false;
+    private bool _CanWallSlideJump = false;
     public Sensor SlidingSensorL1 {get => _SlidingSensorL1; set => _SlidingSensorL1 = value; }
     public Sensor SlidingSensorR1 {get => _SlidingSensorR1; set => _SlidingSensorR1 = value; }
-    public bool CharacterIsSliding {get => _CharacterIsSliding; set => _CharacterIsSliding = value; }
-    public bool CharacterCanWallSlideJump {get => _CharacterCanWallSlideJump; set => _CharacterCanWallSlideJump = value; }
+    public bool IsSliding {get => _IsSliding; set => _IsSliding = value; }
+    public bool CanWallSlideJump {get => _CanWallSlideJump; set => _CanWallSlideJump = value; }
 
 
     [Header("Jump")]
     // TODO: MOVE JUMP
 
     [Header("Dodge")]
-    private bool _CharacterCanDodge = true;
-    private bool _CharacterIsDodging = false;
+    private bool _CanDodge = true;
+    private bool _IsDodging = false;
     private float _TimeUntilDodgeIsDone = 0f;
     private float _DodgeCooldownFinish = 0f;
     [SerializeField] private float _DodgeCooldownDuraction;
     [SerializeField] private float _DodgeDistance = 3f;
     [SerializeField] private float _DodgeSpeed = 0.05f;
-    public bool CharacterCanDodge { get => _CharacterCanDodge; set => _CharacterCanDodge = value; }
-    public bool CharacterIsDodging { get => _CharacterIsDodging; set => _CharacterIsDodging = value; }
+    public bool CanDodge { get => _CanDodge; set => _CanDodge = value; }
+    public bool IsDodging { get => _IsDodging; set => _IsDodging = value; }
     
     public float DodgeCooldownFinish { get => _DodgeCooldownFinish; set => _DodgeCooldownFinish = value; }
     public float DodgeCooldownDuraction { get => _DodgeCooldownDuraction; set => _DodgeCooldownDuraction = value; }
@@ -61,40 +62,41 @@ public class Character : MonoBehaviour
 
 
     [Header("Health")]
-    private bool _CharacterIsHitable;
-    private bool _CharacterIsAlive = true;
+    private bool _IsHitable;
+    private bool _IsAlive = true;
 
 
     [Header("Settings")]
-    private StateOfInteractions _CharacterStateOfInteraction;
+    private StateOfInteractions _StateOfInteraction;
     private LayerMask _OriginalLayer;
-    private Rigidbody2D _CharacterRigidBody2D;
+    private Rigidbody2D _RigidBody2D;
 
     [SerializeField] private LayerMask _CurrentLayer;
     [SerializeField] private CharacterTypes _CharacterType;
-    [SerializeField] private GameObject _CharacterSprite;
+    [SerializeField] private GameObject _Sprite;
 
     [Header("Weapon Settings")]
     [SerializeField] private Transform _WeaponPosition;
 
 
     // Public 
-    public bool CharacterIsAlive { get => _CharacterIsAlive; set => _CharacterIsAlive = value; }
-    public bool CharacterIsActionable { get => _CharacterIsActionable; set => _CharacterIsActionable = value; }
-    public bool CharacterMovementLocked { get => _CharacterMovementLocked; set => _CharacterMovementLocked = value; }
-    public bool CharacterIsMoving { get => _CharacterIsMoving; set => _CharacterIsMoving = value; }
-    public bool CharacterIsFacingRight { get => _CharacterIsFacingRight; set => _CharacterIsFacingRight = value; }
-    public bool CharacterIsGrounded { get => _CharacterIsGrounded; set => _CharacterIsGrounded = value; }
-    public bool CharacterIsHitable { get => _CharacterIsHitable; set => _CharacterIsHitable = value; }
+    public bool IsAlive { get => _IsAlive; set => _IsAlive = value; }
+    public bool IsActionable { get => _IsActionable; set => _IsActionable = value; }
+    public bool MovementLocked { get => _MovementLocked; set => _MovementLocked = value; }
+    public bool IsMoving { get => _IsMoving; set => _IsMoving = value; }
+    public bool IsFalling { get => _IsFalling; set => _IsFalling = value; }
+    public bool IsFacingRight { get => _IsFacingRight; set => _IsFacingRight = value; }
+    public bool IsGrounded { get => _IsGrounded; set => _IsGrounded = value; }
+    public bool IsHitable { get => _IsHitable; set => _IsHitable = value; }
     
     public CharacterTypes CharacterType { get => _CharacterType; set => _CharacterType = value; }
-    public StateOfInteractions CharacterStateOfInteraction { get => _CharacterStateOfInteraction; set => _CharacterStateOfInteraction = value; }
-    public Rigidbody2D CharacterRigidBody2D { get => _CharacterRigidBody2D; set => _CharacterRigidBody2D = value; }
+    public StateOfInteractions StateOfInteraction { get => _StateOfInteraction; set => _StateOfInteraction = value; }
+    public Rigidbody2D RigidBody2D { get => _RigidBody2D; set => _RigidBody2D = value; }
     public Transform WeaponPosition { get => _WeaponPosition; set => _WeaponPosition = value; }
     
     // READ ONLY
     public LayerMask OriginalLayer => _OriginalLayer;
-    public GameObject CharacterSprite => _CharacterSprite;
+    public GameObject Sprite => _Sprite;
 
     // Enums
     public enum CharacterTypes {
@@ -116,12 +118,12 @@ public class Character : MonoBehaviour
     }
 
     private void Start() {
-        if(_CharacterType == CharacterTypes.Player){ CharacterStateOfInteraction = StateOfInteractions.Intro;}
-        if(_CharacterType == CharacterTypes.AI){ CharacterStateOfInteraction = StateOfInteractions.Active; }
+        if(_CharacterType == CharacterTypes.Player){ StateOfInteraction = StateOfInteractions.Intro;}
+        if(_CharacterType == CharacterTypes.AI){ StateOfInteraction = StateOfInteractions.Active; }
 
         _OriginalLayer = _CurrentLayer;
 
-        CharacterRigidBody2D = GetComponent<Rigidbody2D>();
+        RigidBody2D = GetComponent<Rigidbody2D>();
     }
 
     private void Update() {

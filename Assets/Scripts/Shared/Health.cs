@@ -45,7 +45,7 @@ public class Health : MonoBehaviour
     }
 
     public virtual void Damage(float amount){
-        if(!_Character.CharacterIsHitable){ return; }
+        if(!_Character.IsHitable){ return; }
 
         float newHealth = _CurrentHealth - amount;
 
@@ -62,6 +62,6 @@ public class Health : MonoBehaviour
 
     public virtual void Die(){
         // Check if _Character is not null
-        if(_Character){ _Character.CharacterIsAlive = false; }
+        if(_Character){ _Character.IsAlive = false; }
     }
 }

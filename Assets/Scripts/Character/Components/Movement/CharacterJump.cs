@@ -68,61 +68,61 @@ public class CharacterJump : CharacterComponent
     {
         // TODO: JUMP TIMEOUT
         // TODO: Add lockouts
-        if (_Character.GroundSensor.SensorActivated && JumpInput()) return true;
-        return false;
+        return _Character.GroundSensor.SensorActivated && JumpInput();
     }
     
     private bool DecideIfCharacterCanWallJump()
     {
         // TODO: JUMP TIMEOUT
         // TODO: Add lockouts
-        if (_Character.CharacterCanWallSlideJump && JumpInput()) return true;
-        return false;
+        return _Character.CanWallSlideJump && JumpInput();
     }
     private bool JumpInput()
     {
-        if (Input.GetKeyDown(CharacterInputs.JumpKeyCode)) return true;
-        return false;
+        return Input.GetKeyDown(CharacterInputs.JumpKeyCode);
     }
 
     private void Jump()
     {
         _JumpStartPos = transform.position.y;
-        _Character.CharacterRigidBody2D.velocity = Vector2.up * VerticalTakeOff;
+        _Character.RigidBody2D.velocity = Vector2.up * VerticalTakeOff;
         CharacterIsJumping = true;
     }
     
     private void WallJump()
     {
         _JumpStartPos = transform.position.y;
-        _Character.CharacterRigidBody2D.velocity = Vector2.up * VerticalTakeOff;
+        _Character.RigidBody2D.velocity = Vector2.up * VerticalTakeOff;
         
         float wallJumpVertical = WallJumpType2 ? _WallJumpPushOff : 0;
-        float wallJumpPushOff =  !_Character.CharacterIsFacingRight ? _WallJumpPushOff : -_WallJumpPushOff;
-        _Character.CharacterRigidBody2D.AddForce(new Vector2(wallJumpPushOff, wallJumpVertical), ForceMode2D.Force);
+        float wallJumpPushOff =  !_Character.IsFacingRight ? _WallJumpPushOff : -_WallJumpPushOff;
+        _Character.RigidBody2D.AddForce(new Vector2(wallJumpPushOff, wallJumpVertical), ForceMode2D.Force);
         CharacterIsJumping = true;
     }
 
     private void ApplyGravity()
     {
-        if (_Character.CharacterRigidBody2D.velocity.y < 0f)
+        if (_Character.RigidBody2D.velocity.y < 0f)
         {
+            _Character.IsFalling = true;
             // Effects rigidbody with downward force
-            _Character.CharacterRigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - GravityScaled) * Time.deltaTime;
+            _Character.RigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (FallMultiplier - GravityScaled) * Time.deltaTime;
         }
-        else if (_Character.CharacterRigidBody2D.velocity.y > 0f)
+        else if (_Character.RigidBody2D.velocity.y > 0f)
         {
+            _Character.IsFalling = false;
             // Creates "Video game" jump that has a snappier up and floaty down
-            _Character.CharacterRigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (LowJumpModifier - GravityScaled) * Time.deltaTime;
+            _Character.RigidBody2D.velocity += Vector2.up * Physics2D.gravity.y * (LowJumpModifier - GravityScaled) * Time.deltaTime;
         }
     }
 
     private void DecideIfCharacterLanded()
     {
-        if (_Character.GroundSensor.SensorActivated && _Character.CharacterRigidBody2D.velocity.y <= 0f && CharacterIsJumping)
+        if (_Character.GroundSensor.SensorActivated && _Character.RigidBody2D.velocity.y <= 0f && CharacterIsJumping)
         {
             // TODO: Lots of things can be done here, but one that I think I may be interested in looking into is fall damage
             CharacterIsJumping = false;
+            _Animation.ChangeAnimationState("Land", CharacterAnimation.AnimationType.Static);
         }
     }
 

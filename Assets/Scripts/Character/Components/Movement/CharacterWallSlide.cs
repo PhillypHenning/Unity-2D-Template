@@ -15,16 +15,16 @@ public class CharacterWallSlide : CharacterComponent
 
     private void DecideIfCharacterWallSliding(){
         // If the Knee sensors are activated && character is not touching the ground
-        if(!_Character.GroundSensor.SensorActivated && (_Character.SlidingSensorL1.SensorActivated || _Character.SlidingSensorR1.SensorActivated)) _Character.CharacterIsSliding = true; 
-        if(_Character.GroundSensor.SensorActivated || (!_Character.SlidingSensorL1.SensorActivated && !_Character.SlidingSensorR1.SensorActivated)) _Character.CharacterIsSliding = false;
+        if(!_Character.GroundSensor.SensorActivated && (_Character.SlidingSensorL1.SensorActivated || _Character.SlidingSensorR1.SensorActivated)) _Character.IsSliding = true; 
+        if(_Character.GroundSensor.SensorActivated || (!_Character.SlidingSensorL1.SensorActivated && !_Character.SlidingSensorR1.SensorActivated)) _Character.IsSliding = false;
     }
 
     private void WallSlide(){
-        if(!_Character.CharacterIsSliding){ 
-            _Character.CharacterCanWallSlideJump = false;
+        if(!_Character.IsSliding){ 
+            _Character.CanWallSlideJump = false;
             return; 
         }
         // Character Should be able to jump
-        _Character.CharacterCanWallSlideJump = true;
+        _Character.CanWallSlideJump = true;
     }
 }

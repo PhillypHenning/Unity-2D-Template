@@ -7,6 +7,7 @@ public class CharacterComponent : MonoBehaviour
     protected Character _Character;
     protected ComponentAchievements _CharacterAchievements;
     protected CharacterInputs _CharacterInputs;
+    protected CharacterAnimation _Animation;
 
     public ComponentAchievements CharacterAchievements { get => _CharacterAchievements; set => _CharacterAchievements = value; }
     public CharacterInputs CharacterInputs { get => _CharacterInputs; set => _CharacterInputs = value; }
@@ -15,6 +16,7 @@ public class CharacterComponent : MonoBehaviour
     protected virtual void Start()
     {
         _Character = GetComponent<Character>();
+        _Animation = GetComponent<CharacterAnimation>();
         CharacterAchievements = GetComponent<ComponentAchievements>();
         CharacterInputs = GetComponent<CharacterInputs>();
     }
