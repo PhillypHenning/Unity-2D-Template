@@ -67,11 +67,13 @@ public class CharacterAnimation : MonoBehaviour
         if (_Character.IsGrounded)
         {
             // if the current animation state is "falling" then we know to play the landing anim
-            if (_CurrentAnimation == "Falling")
+            /*
+            if (_CurrentAnimation == "Fall")
             {
                 ChangeAnimationState("landing", AnimationType.Static);
             }
-            else if (_Character.IsMoving)
+            */
+            if (_Character.IsMoving)
             {
                 ChangeAnimationState("Run");
             }

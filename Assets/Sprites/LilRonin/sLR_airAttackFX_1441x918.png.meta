@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 96aa74345aceae54092128e38ee78e3f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -868967278307236507
+    second: sLR_airAttackFX_1441x918_0
+  - first:
+      213: -2388568696762430539
+    second: sLR_airAttackFX_1441x918_1
+  - first:
+      213: 5223575527629794656
+    second: sLR_airAttackFX_1441x918_2
+  - first:
+      213: -6951603354882775514
+    second: sLR_airAttackFX_1441x918_3
+  - first:
+      213: -5796054848535498680
+    second: sLR_airAttackFX_1441x918_4
+  - first:
+      213: -9013603502930921985
+    second: sLR_airAttackFX_1441x918_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +119,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sLR_airAttackFX_1441x918_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 918
+        width: 1441
+        height: 918
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5652f074ddec0f3f0800000000000000
+      internalID: -868967278307236507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sLR_airAttackFX_1441x918_1
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 918
+        width: 1441
+        height: 918
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bb8bdbec691aded0800000000000000
+      internalID: -2388568696762430539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sLR_airAttackFX_1441x918_2
+      rect:
+        serializedVersion: 2
+        x: 2882
+        y: 918
+        width: 1441
+        height: 918
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d2cc5444edd7840800000000000000
+      internalID: 5223575527629794656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sLR_airAttackFX_1441x918_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1441
+        height: 918
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6266cc47491f68f90800000000000000
+      internalID: -6951603354882775514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sLR_airAttackFX_1441x918_4
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 0
+        width: 1441
+        height: 918
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8407c56f2d6409fa0800000000000000
+      internalID: -5796054848535498680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sLR_airAttackFX_1441x918_5
+      rect:
+        serializedVersion: 2
+        x: 2882
+        y: 0
+        width: 1441
+        height: 918
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff5f595ce5f39e280800000000000000
+      internalID: -9013603502930921985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
