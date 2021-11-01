@@ -9,6 +9,7 @@ public class CharacterMovement : CharacterComponent
     private float _VerticalMovement;
     private float _HorizontalForceApplied;
     private float _MovementCompoundValue = 0.015f;
+    private float _EnviromentalForceApplied = 0;
 
     // Protected
 
@@ -22,6 +23,7 @@ public class CharacterMovement : CharacterComponent
     public float HorizontalMovement { get => _HorizontalMovement; set => _HorizontalMovement = value; }
     public float VerticalMovement { get => _VerticalMovement; set => _VerticalMovement = value; }
     public float DragToBeApplied { get => _DragToBeApplied; set => _DragToBeApplied = value; }
+    public float EnviromentalForceApplied { get => _EnviromentalForceApplied; set => _EnviromentalForceApplied = value; }
 
     protected override void Start(){
         base.Start();
@@ -44,6 +46,30 @@ public class CharacterMovement : CharacterComponent
             _HorizontalForceApplied = _MovementSpeed * _HorizontalMovement;
             if(_HorizontalForceApplied > _MaxSpeed) _HorizontalForceApplied = _MaxSpeed;
             else if(_HorizontalForceApplied < -_MaxSpeed) _HorizontalForceApplied = -_MaxSpeed;
+            
+            // if the character is facing right, the wind should blow them left
+            // if the chracter is facing left, the wind should blow them right
+            if(_Character.IsInWind){
+                if(_Character.IsFacingRight){
+                    if(_HorizontalMovement == 0){
+                        _HorizontalForceApplied = -EnviromentalForceApplied;
+                    }
+                    else{
+                        _HorizontalForceApplied += -EnviromentalForceApplied;
+                    }
+                }else{
+                    if(_HorizontalMovement == 0){
+                        _HorizontalForceApplied = EnviromentalForceApplied;
+                    }
+                    else{
+                        _HorizontalForceApplied += EnviromentalForceApplied;
+                    }
+                }
+            }
+
+            //_HorizontalForceApplied = _HorizontalForceApplied == 0 ?  EnviromentalForceApplied : _HorizontalForceApplied += EnviromentalForceApplied;
+            //_HorizontalForceApplied *= EnviromentalForceApplied;
+            
             _Character.RigidBody2D.AddForce(new Vector2(_HorizontalForceApplied, 0), ForceMode2D.Impulse); // <-- Immediate force applied
         }
 

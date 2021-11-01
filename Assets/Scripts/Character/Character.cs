@@ -78,6 +78,9 @@ public class Character : MonoBehaviour
     [Header("Weapon Settings")]
     [SerializeField] private Transform _WeaponPosition;
 
+    [Header("Environmental")]
+    [SerializeField] private bool _IsInWind = false;
+
 
     // Public 
     public bool IsAlive { get => _IsAlive; set => _IsAlive = value; }
@@ -88,6 +91,7 @@ public class Character : MonoBehaviour
     public bool IsFacingRight { get => _IsFacingRight; set => _IsFacingRight = value; }
     public bool IsGrounded { get => _IsGrounded; set => _IsGrounded = value; }
     public bool IsHitable { get => _IsHitable; set => _IsHitable = value; }
+    public bool IsInWind { get => _IsInWind; set => _IsInWind = value; }
     
     public CharacterTypes CharacterType { get => _CharacterType; set => _CharacterType = value; }
     public StateOfInteractions StateOfInteraction { get => _StateOfInteraction; set => _StateOfInteraction = value; }
